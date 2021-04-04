@@ -4,7 +4,8 @@ function App() {
   return (
     <div>
       <Hello name="React" color="red"/>
-      <Hello color="pink"/>
+      <Hello name="Jeong" color="pink"/>
+      <Hello color="skyblue"/>
     </div>
   );
 }
