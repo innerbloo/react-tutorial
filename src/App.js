@@ -3,7 +3,8 @@ import Hello from './Hello';
 function App() {
   return (
     <div>
-      <Hello name="react"/>
+      <Hello name="React" color="red"/>
+      <Hello color="pink"/>
     </div>
   );
 }

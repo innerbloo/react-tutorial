@@ -1,9 +1,13 @@
-const Hello = props => {
+const Hello = ({name, color}) => {
   return (
-      <div>
-        {props.name}
+      <div style={{color: color}}>
+        hello, {name}
       </div>
   );
 };
+
+Hello.defaultProps = {
+  name: 'Unknown'
+}
 
 export default Hello;
