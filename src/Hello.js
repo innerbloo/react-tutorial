@@ -1,7 +1,7 @@
-const Hello = () => {
+const Hello = props => {
   return (
       <div>
-        Hello World!
+        {props.name}
       </div>
   );
 };
