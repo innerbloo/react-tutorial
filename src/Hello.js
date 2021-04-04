@@ -1,8 +1,11 @@
-const Hello = ({name, color}) => {
+const Hello = ({name, color, isSpecial}) => {
   return (
-      <div style={{color: color}}>
-        hello, {name}
-      </div>
+    <div style={{
+      color
+    }}>
+      {isSpecial && <b>* </b>}
+      hello, {name}
+    </div>
   );
 };
 

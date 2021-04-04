@@ -1,12 +1,8 @@
-import Hello from './Hello';
+import InputSample from './InputSample';
 
 function App() {
   return (
-    <div>
-      <Hello name="React" color="red"/>
-      <Hello name="Jeong" color="pink"/>
-      <Hello color="skyblue"/>
-    </div>
+    <InputSample/>
   );
 }
 
