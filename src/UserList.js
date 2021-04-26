@@ -1,7 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext, useCallback} from 'react';
+import {UserDispatch} from './App';
 
-const User = React.memo(({user, onRemove, onToggle}) => {
+const User = React.memo(({user}) => {
   const {username, email, id, active} = user;
+  const dispatch = useContext(UserDispatch);
+
   useEffect(() => {
     // console.log('user 마운트');
     return () => {
@@ -13,21 +16,28 @@ const User = React.memo(({user, onRemove, onToggle}) => {
     <div>
       <b
         style={{color: active && 'green', cursor: 'pointer'}}
-        onClick={() => onToggle(id)}
+        onClick={() => dispatch({
+          type: "TOGGLE_USER",
+          id
+        })}
       >
         {username}
       </b>
-      <span>({email})</span>
-      <button onClick={() => onRemove(id)}>삭제</button>
+      <span>({email}) </span>
+      <strong>ID: {id} </strong>
+      <button onClick={() => dispatch({
+        type: "REMOVE_USER",
+        id
+      })}>삭제</button>
     </div>
   )
 })
 
-const UserList = ({users, onRemove, onToggle}) => {
+const UserList = ({users}) => {
   return (
     <div>
       {users.map(user => (
-        <User key={user.id} user={user} onRemove={onRemove} onToggle={onToggle}/>
+        <User key={user.id} user={user}/>
       ))}
     </div>
   );
