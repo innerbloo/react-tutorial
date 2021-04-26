@@ -1,7 +1,6 @@
-import {useRef, useState, useMemo, useCallback, useReducer, createContext} from 'react';
+import {useMemo, useReducer, createContext} from 'react';
 import UserList from './UserList';
 import CreateUser from './CreateUser';
-import useInputs from "./useInputs";
 
 const countActiveUsers = users => {
   console.log('활성사용자 수를 세는중..');

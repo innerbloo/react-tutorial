@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, useCallback} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {UserDispatch} from './App';
 
 const User = React.memo(({user}) => {
